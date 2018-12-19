@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ÅÅĞò;
+package æ’åº;
 
 import java.util.Arrays;
 import java.util.Random;
@@ -14,13 +14,13 @@ import java.util.Random;
  */
 public class QuickSort {
 
-    //¿ìËÙÅÅĞò
+    //å¿«é€Ÿæ’åº
     static void quick_sort(Integer s[], int l, int r) {
         if (l < r) {
-            //Swap(s[l], s[(l + r) / 2]); //½«ÖĞ¼äµÄÕâ¸öÊıºÍµÚÒ»¸öÊı½»»» ²Î¼û×¢1
+            //Swap(s[l], s[(l + r) / 2]); //å°†ä¸­é—´çš„è¿™ä¸ªæ•°å’Œç¬¬ä¸€ä¸ªæ•°äº¤æ¢
             int low = l, high = r, x = s[l];
             while (low < high) {
-                while (low < high && s[high] >= x) // ´ÓÓÒÏò×óÕÒµÚÒ»¸öĞ¡ÓÚxµÄÊı
+                while (low < high && s[high] >= x) // ä»å³å‘å·¦æ‰¾ç¬¬ä¸€ä¸ªå°äºxçš„æ•°
                 {
                     high--;
                 }
@@ -28,7 +28,7 @@ public class QuickSort {
                 s[low] = s[high];
 //                }
 
-                while (low < high && s[low] < x) // ´Ó×óÏòÓÒÕÒµÚÒ»¸ö´óÓÚµÈÓÚxµÄÊı
+                while (low < high && s[low] < x) // ä»å·¦å‘å³æ‰¾ç¬¬ä¸€ä¸ªå¤§äºç­‰äºxçš„æ•°
                 {
                     low++;
                 }
@@ -37,7 +37,7 @@ public class QuickSort {
 //                }
             }
             s[low] = x;
-            quick_sort(s, l, low - 1); // µİ¹éµ÷ÓÃ 
+            quick_sort(s, l, low - 1); // é€’å½’è°ƒç”¨ 
             quick_sort(s, low + 1, r);
         }
     }
@@ -47,7 +47,7 @@ public class QuickSort {
         int left = low;
         int right = high;
         int temp;
-        temp = s[low];//»ù×¼Êı
+        temp = s[low];//åŸºå‡†æ•°
         if (low < high) {
             while (left < right) {
                 while (right > low && s[right] >= s[low]) {
@@ -57,16 +57,16 @@ public class QuickSort {
                     left++;
                 }
 
-                //Á½¸öÉÚ±ø»¹Ã»ÓĞÏàÓöÊ±£¬½»»»
+                //ä¸¤ä¸ªå“¨å…µè¿˜æ²¡æœ‰ç›¸é‡æ—¶ï¼Œäº¤æ¢
                 if (left < right) {
                     temp = s[left];
                     s[left] = s[right];
                     s[right] = temp;
                 }
             }
-            //½«»ù×¼Êı·Åµ½ÕıÈ·µÄÎ»ÖÃÉÏ
+            //å°†åŸºå‡†æ•°æ”¾åˆ°æ­£ç¡®çš„ä½ç½®ä¸Š
             s[low] = s[right];
-            s[right] = temp;//»ù×¼Êı
+            s[right] = temp;//åŸºå‡†æ•°
 
             sort(s, low, right - 1);
             sort(s, right + 1, high);
@@ -126,14 +126,14 @@ public class QuickSort {
 //        }
 
         Integer arr[] = {6, 1, 2, 7, 9};
-        System.out.println("ÅÅĞòÇ°£º" + Arrays.toString(arr));
+        System.out.println("æ’åºå‰ï¼š" + Arrays.toString(arr));
 
-//        System.out.println("µÚ6´óµÄÔªËØ£º"+selectK(arr, 5));
+//        System.out.println("ç¬¬6å¤§çš„å…ƒç´ ï¼š"+selectK(arr, 5));
         sort(arr, 0, arr.length - 1);
 //        quick_sort(arr, 0, arr.length - 1);
 //        QuickSort(arr, 0, arr.length - 1);
-        System.out.println("Êı×é³¤¶È£º" + arr.length);
-        System.out.println("ÅÅĞòºó£º" + Arrays.toString(arr));
+        System.out.println("æ•°ç»„é•¿åº¦ï¼š" + arr.length);
+        System.out.println("æ’åºåï¼š" + Arrays.toString(arr));
 
     }
 }
