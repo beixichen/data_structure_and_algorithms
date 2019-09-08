@@ -9,7 +9,7 @@ package 排序;
  *
  * @author fx50jk
  */
-public class BublbleSort {
+public class BubbleSort {
 
     static void BubbleSort1(int a[], int n) {
         int i, j ,temp;
