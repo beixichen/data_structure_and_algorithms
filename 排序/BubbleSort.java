@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ����;
+package 排序;
 
 /**
  *
@@ -43,9 +43,9 @@ public class BublbleSort {
         System.out.println("");
     }
 
-//ð������2  
-    //1)���ӱ�־λ��������յĽ���λ�ã�ȥ������Ҫ�Ľ���������  
-    //2)�����ǰѭ��û�н������ݣ�˵���Ѿ��������ȥ������Ҫ�ıȽϣ�  
+//冒泡排序2  
+    //1)增加标志位，标记最终的交换位置，去掉不必要的交换操作；  
+    //2)如果当前循环没有交换数据，说明已经完成排序，去掉不必要的比较；  
     static void BubbleSort2(int a[], int n) {
         int j, k;
         boolean flag;
@@ -68,7 +68,7 @@ public class BublbleSort {
             }
            System.out.println();
             if (flag==false) {
-                break;//���α���û�з�������˵���Ѿ�����
+                break;//本次遍历没有发生交换说明已经有序
             }
         }
 //        while (flag) {
@@ -88,9 +88,9 @@ public class BublbleSort {
         }
         System.out.println("");
     }
-/*�����100���������飬��ǰ��10�����򣬺���90�������ź����Ҷ�����ǰ��10�����֣�
-    ��ô�ڵ�һ�˱����� �����������λ�ñض�С��10�������λ��֮������ݱض��Ѿ������ˣ���¼����λ�ã�
-    �ڶ���ֻҪ������ͷ�����������λ�þͿ����ˡ�
+/*如果有100个数的数组，仅前面10个无序，后面90个都已排好序且都大于前面10个数字，
+    那么在第一趟遍历后， 最后发生交换的位置必定小于10，且这个位置之后的数据必定已经有序了，记录下这位置，
+    第二次只要从数组头部遍历到这个位置就可以了。
     */
     static void BubbleSort3(int a[], int n) {
         int j, k;
